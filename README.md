@@ -15,3 +15,32 @@ https://github.com/josejuansanchez/iaw-practica-lamp
 #### Crear un archivo docker-compose.yml para poder desplegar los servicios de Apache, MySQL y phpMyAdmin. Deberá utilizar las imágenes oficiales de Docker Hub.
 
 #### Busque cuál es la dirección IP pública de su instancia y compruebe que puede acceder a los servicios de Apache y phpMyAdmin desde una navegador web.
+FROM ubuntu:focal
+
+
+
+LABEL author="José Juan Sánchez"
+
+
+
+ENV DEBIAN_FRONTEND=noninteractive 
+
+
+
+RUN apt update \
+
+    && apt install apache2 -y\
+
+    && apt install php -y \
+
+    && apt install libapache2-mod-php -y \
+
+    && apt install php-mysql -y
+
+
+
+COPY index.php /var/www/html
+
+
+
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

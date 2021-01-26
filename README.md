@@ -16,6 +16,8 @@ https://github.com/josejuansanchez/iaw-practica-lamp
 
 #### Busque cuál es la dirección IP pública de su instancia y compruebe que puede acceder a los servicios de Apache y phpMyAdmin desde una navegador web.
 
+### tendremos que tener la siguiente estructura:
+https://github.com/jesus2307/iaw-practica-16/blob/main/image.png
 ### Ejecutamos el dockerfile con:
 sudo docker build -t lamp 
 ### ejecutamos el cocker-compose con:
